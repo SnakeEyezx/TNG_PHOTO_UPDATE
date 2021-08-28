@@ -148,7 +148,7 @@ def sync_list_builder():
                                 tng_update_query = f"UPDATE SIGUR_PHOTO_SYNC SET PHOTO_BIN = ?, PHOTO_VERSION = ? WHERE PHOTO_ID = ?;"
                                 # Выполняем множественный запрос на Insert, передаем в него список на синхронизацию
                                 print('Executing SQL QUERY...')
-                                cursor.execute(tng_update_query, update_query_unit, up_photo_bin, photo_mod_date)
+                                cursor.execute(tng_update_query, up_photo_bin, photo_mod_date, update_query_unit)
                                 connection.commit()
                                 print('SQL Transaction done...\n')
                             # Обработка ошибки и откат
